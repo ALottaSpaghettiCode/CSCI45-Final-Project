@@ -49,7 +49,7 @@ modules: [
         },
 {
 	module: "calendar",
-	position: "top_left", // This can be any of the regions. Best results in left or right regions.
+	position: "top_left",
 	config: {
 		fade: false,
 		calendars: [
@@ -127,7 +127,7 @@ modules: [
 		blurCorrectionInFrameSide: false,
 		blurCorrectionInAllSides: false,
 		alwaysUseDefaultDeviceIcon: false,
-		experimentalCSSOverridesForMM2: false, // [SEE BELOW]
+		experimentalCSSOverridesForMM2: false,
 		experimentalColorSignaling: false,
     },
 },
