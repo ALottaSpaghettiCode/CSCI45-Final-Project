@@ -37,5 +37,5 @@
 
 /* shift spotify over */
 .module.MMM-OnSpotify {
-  transform: translateX(100px); /* try 10–40 */
+  transform: translateX(100px);
 }
