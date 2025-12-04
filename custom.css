@@ -1,0 +1,41 @@
+/* global card background */
+:root{
+  --mm-card-bg: rgba(0, 0, 0, 0.42);
+  --mm-card-border: rgba(255, 255, 255, 0.12);
+  --mm-card-radius: 16px;
+  --mm-card-pad: 14px;
+  --mm-card-shadow: 0 10px 28px rgba(0,0,0,0.35);
+}
+
+.module .module-content {
+  background: var(--mm-card-bg);
+  border: 1px solid var(--mm-card-border);
+  border-radius: var(--mm-card-radius);
+  padding: var(--mm-card-pad);
+  box-shadow: var(--mm-card-shadow);
+}
+
+/* add shadow under text for legibility */
+.module .module-content,
+.module .module-content * {
+  text-shadow: 0 1px 2px rgba(0,0,0,0.55);
+}
+
+/* force text white */
+.module,
+.module * {
+  color: #fff !important;
+}
+
+/* make modules bigger*/
+:root { --module-scale: 1.5; }
+
+/* exclude the background */
+.module:not(.MMM-Unsplash){
+  zoom: var(--module-scale);
+}
+
+/* shift spotify over */
+.module.MMM-OnSpotify {
+  transform: translateX(100px); /* try 10–40 */
+}

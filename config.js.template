@@ -1,0 +1,141 @@
+let config = {
+timeFormat: 12,
+modules: [
+	{
+	module: 'clock',
+	position: 'top_left',
+	config:	{
+		timeFormat: 12,
+		timezone: 'America/Los_Angeles'
+		},
+	},
+
+	{
+	module: 'MMM-Unsplash',
+	position: 'fullscreen_below',
+	config: {
+		opacity: 1,
+		updateInterval: 73,
+		orientation: 'landscape',
+		collections: '${UNSPLASH_COLLECTIONS}',
+		apiKey: '${UNSPLASH_API}'
+		}
+	},
+
+	{
+	module: 'weather',
+	position: 'top_right',
+	config: {
+		type: 'current',
+		units: 'imperial',
+		tempUnits: 'imperial',
+		apiKey: '${OPENWEATHER_API}',
+		lat: '${LATITUDE}',
+		long: '${LONGITUDE}'
+		},
+	},
+        {
+        module: 'weather',
+        position: 'top_right',
+        config: {
+                type: 'forecast',
+                units: 'imperial',
+                tempUnits: 'imperial',
+		fade: false,
+                apiKey: '${OPENWEATHER_API}',
+                lat: '${LATITUDE}',
+                long: '${LONGITUDE}'
+                },
+        },
+{
+	module: "calendar",
+	position: "top_left", // This can be any of the regions. Best results in left or right regions.
+	config: {
+		fade: false,
+		calendars: [
+			{
+			url: '${ICAL_URL}',
+			symbol: 'calendar'
+			},
+			],
+		},
+	},
+
+	{
+	module: 'MMM-Todoist2',
+	position: 'top_left',
+	header: 'Todo',
+		config: {
+			hideWhenEmpty: false,
+			accessToken: '${TODOIST_API}',
+			maximumEntries: 60,
+			updateInterval: 5*60000, // Update every 1 minute
+			showProject: false,
+			fade: false,
+			groupByProject: false,
+			projects: [ '${TODOIST_PROJECT}' ],
+			}
+	},
+
+	{
+	module: "MMM-OnSpotify",
+	position: "bottom_center",
+	config: {
+		// Spotify Auth
+		clientID: '${SPOTIFY_ID}',
+		clientSecret: '${SPOTIFY_SECRET}',
+		accessToken: '${SPOTIFY_ACCESS}',
+		refreshToken: '${SPOTIFY_REFRESH}',		
+
+		advertisePlayerTheme: false,
+		displayWhenEmpty: "both",
+		userAffinityUseTracks: false,
+		prefersLargeImageSize: false,
+		hideTrackLengthAndAnimateProgress: false,
+		showDebugPalette: false,
+		userDataMaxAge: 14400,
+		userAffinityMaxAge: 36000,
+		deviceFilter: [],	
+		deviceFilterExclude: false,
+		filterNoticeSubtitle: true,
+        
+		isPlaying: 1,
+		isEmpty: 2,
+		isPlayingHidden: 2,
+		isEmptyHidden: 4,
+		onReconnecting: 4,
+		onError: 8,
+
+		mediaAnimations: false,
+		fadeAnimations: false,
+		scrollAnimations: false,
+		textAnimations: false,
+		transitionAnimations: false,
+		spotifyVectorAnimations: false,
+
+		spotifyCodeExperimentalShow: true,
+		spotifyCodeExperimentalUseColor: true,
+		spotifyCodeExperimentalSeparateItem: true,
+
+		roundMediaCorners: true,
+		roundProgressBar: true,
+		showVerticalPipe: false, 
+		useColorInProgressBar: true,
+		useColorInTitle: true,
+		useColorInUserData: true,
+		showBlurBackground: false,
+		blurCorrectionInFrameSide: false,
+		blurCorrectionInAllSides: false,
+		alwaysUseDefaultDeviceIcon: false,
+		experimentalCSSOverridesForMM2: false, // [SEE BELOW]
+		experimentalColorSignaling: false,
+    },
+},
+
+
+
+
+],
+};
+/*************** DO NOT EDIT THE LINE BELOW ***************/
+if (typeof module !== "undefined") { module.exports = config; }
